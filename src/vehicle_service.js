@@ -6,8 +6,7 @@ class VehicleApi {
     getVehicles(){
         fetch(this.port + `/vehicles`)
         .then(response => response.json())
-        .then(data => {
-            console.log(data)
-        })
+        .then(data => console.log(data))
+        .catch()
     }
 }
