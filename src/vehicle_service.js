@@ -6,7 +6,12 @@ class VehicleApi {
     getVehicles(){
         fetch(this.port + `/vehicles`)
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            for(const vehicle of data){
+                let c = new Vehicle(vehicle)
+                c.setToDom()
+            }
+        })
         .catch()
     }
 }
