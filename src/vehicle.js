@@ -20,7 +20,17 @@ class Vehicle {
         // debugger
     };
 
-    
+    render(){
+        // this.element.innerHTML = `
+        // <div data-id="${this.id}">
+        // <h2 class="title">${this.title}</h2>
+        // <p class="description">${this.description}</p>
+        // </div>
+        // <button class="edit" data-id=${this.id}>Edit Comment</button>
+        // <button class="delete" data-id=${this.id}>X</button>
+        // `
+        // return this.element
+    }
 }
 
 
