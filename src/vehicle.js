@@ -1,6 +1,7 @@
 class Vehicle {
     static all = [];
-    // static cont = document.getElementById("comments-cont")
+    static cont = document.getElementById("vehicles-cont");
+
     constructor({model, make, id, transmission, fuel_type, doors, mileage, year, rental_company_id, rental_company}){
         this.model = model
         this.make = make
@@ -17,19 +18,31 @@ class Vehicle {
         this.element.id = `vehicle-${id}`;
         // this.element.addEventListener('click', this.handleClick);
         Vehicle.all.push(this)
-        // debugger
     };
 
     render(){
-        // this.element.innerHTML = `
-        // <div data-id="${this.id}">
-        // <h2 class="title">${this.title}</h2>
-        // <p class="description">${this.description}</p>
-        // </div>
-        // <button class="edit" data-id=${this.id}>Edit Comment</button>
-        // <button class="delete" data-id=${this.id}>X</button>
-        // `
-        // return this.element
+        this.element.innerHTML = `
+        <div data-id="${this.id}">
+        <h2 class="company_name">${this.rental_company.name}</h2>
+        <h3 class="make">${this.make}</h3>
+        <p class="model"><strong>Model</strong> ${this.model}</p>
+        <p class="transmission"><strong>transmission:</strong> ${this.transmission}</p>
+        <p class="fuel_type"><strong>fuel type: </strong>${this.fuel_type}</p>
+        <p class="doors"><strong>Doors:</strong>${this.doors}</p>
+        <p class="mileage"><strong>Mileage:</strong>${this.mileage}</p>
+        <p class="year"><strong>Year:</strong> ${this.year}</p>
+
+        <button class="edit" data-id=${this.id}>Edit Vehicle</button>
+        <button class="delete" data-id=${this.id}>X</button>
+        </div>
+        `
+        this.element.style.display = "inline-flex";
+        this.element.style.margin = "10px 50px 20px 10px";
+        return this.element
+    }
+
+    setToDom(){
+        Vehicle.cont.appendChild(this.render())
     }
 }
 
