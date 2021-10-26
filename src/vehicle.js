@@ -44,6 +44,11 @@ class Vehicle {
     setToDom(){
         Vehicle.cont.appendChild(this.render())
     }
+    setOption(make){
+        // debugger
+        select = this.document.getElementById("make");
+   
+    }
 }
 
 

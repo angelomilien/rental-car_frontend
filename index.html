@@ -1,23 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="src/vehicle.js"></script>
-    <script defer src="src/vehicle_service.js"></script>
-    <script defer src="src/rental_company.js"></script>
-    <script defer src="src/rental_company_service.js"></script>
-    <script defer src="index.js"></script>
-    <title>RentalCar</title>
-</head>
-<body>
-   <div class="diva">
-       <h1>Rental Car Manager</h1><hr>
-       <div id="vechicle-form"></div>
-       <div id="rental_company-form"></div>
-       <div id="vehicles-cont"></div>
-   </div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script defer src="src/vehicle.js"></script>
+        <script defer src="src/vehicle_service.js"></script>
+        <script defer src="src/rental_company.js"></script>
+        <script defer src="src/rental_company_service.js"></script>
+        <script defer src="index.js"></script>
+        <title>RentalCar</title>
+    </head>
+    <body>
+       <div class="diva">
+           <h1>Rental Car Manager</h1><hr>
+           <div>
+                <h2>Add vehicle</h2>
+                <form id="vehicle-form">
+                    <label for="vehicle-make">Make:</label>
+                    <select name="make" id="vehicle-make">
+                        <option value="honda">Honda</option>
+                        <option value="ford">Ford</option>
+                        <option value="bmw">Bmw</option>
+                        <option value="audi">Audi</option>
+                        <option value="licncoln">Lincoln</option>
+                        <option value="buick">Buick</option>
+                    </select><br>
+
+                    <label for="vehicle-doors">Doors:</label>
+                    <input type="text" name="doors" id="vehicle-doors"/><br>
+
+                    <label for="vehicle-transmission">Transmission:</label>
+                    <select name="transmission" id="transmission">
+                        <option value="cvt">CVT</option>
+                        <option value="manual">Manual</option>
+                        <option value="automatic">Automatic</option>
+                        <option value="automanual">Automanual</option>
+                    </select><br>
+
+                    <label for="vehicle-fuel_type">Fuel type:</label>
+                    <select name="fuel_type" id="vehicle-fuel-type">
+                        <option value="diesel">Diesel</option>
+                        <option value="gasoline_hybrid">Gasoline Hybrid</option>
+                        <option value="E-85/Gasoline">E-85/Gasoline</option>
+                        <option value="ethanol">Ethanol</option>
+                        <option value="Compressed_Natural_Gas"> Compressed Natural Gas</option>
+                    </select><br>
+
+                    <label for="mileage">Mileage:</label>
+                    <input type="text" name="mileage" id="vehicle-mileage"/><br/>
+                    
+                    <label for="vehicle-year">Year:</label>
+                    <input type="text" name="year" id="vehicle-year"/><br/>
+                    
+                    <label for="vehicle-rental-company">Rental Company:</label>
+                    <select name="rental_company_id" id="vehicle-rental-company">
+                        <option value="avis">Avis</option>
+                        <option value="enterprise">Enterprise</option>
+                        <option value="budget">Budget</option>
+                    </select></br>
+                    <input type="submit" value="Submit" />
+                </form>
+           </div>
+           <div id="vechicle-form"></div>
+           <div id="rental_company-form"></div>
+           <div id="vehicles-cont"></div>
+       </div>
+    </body>
 </html>

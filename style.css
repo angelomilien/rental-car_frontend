@@ -1,7 +1,9 @@
 body {
   background-color: black;
+  padding: 0.5%;
 }
 
 .diva {
   background-color: gainsboro;
+  padding: 3%;
 }
