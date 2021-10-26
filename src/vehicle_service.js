@@ -8,8 +8,8 @@ class VehicleApi {
         .then(response => response.json())
         .then(data => {
             for(const vehicle of data){
-                let c = new Vehicle(vehicle)
-                c.setToDom()
+                let v = new Vehicle(vehicle)
+                v.setToDom()
             }
         })
         .catch()
