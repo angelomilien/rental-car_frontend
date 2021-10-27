@@ -48,12 +48,13 @@ class Vehicle {
 
     addMakeToSelect(){
         const option = document.createElement('option');
-        option.value = this.id;
+        option.id  = this.id;
+        option.value = this.make
         option.innerText = this.make;
         make_select_element.appendChild(option);
 
         for (const opt of make_select_element.children){
-            if (opt.innerText === this.make && opt.value !== option.value){
+            if (opt.innerText === this.make && opt.id !== option.id){
                 make_select_element.removeChild(option);
             }
         }
@@ -61,12 +62,13 @@ class Vehicle {
     
     addModelToSelect(){
         const option = document.createElement('option');
-        option.value = this.id;
+        option.id = this.id
+        option.value = this.model;
         option.innerText = this.model;
         model_select_element.appendChild(option)
 
         for (const opt of model_select_element.children){
-            if (opt.innerText === this.model && opt.value !== option.value){
+            if (opt.innerText === this.model && opt.id !== option.id){
                 model_select_element.removeChild(option);
             }
         }
@@ -74,12 +76,13 @@ class Vehicle {
 
     addTransmissionToSelect(){
         const option = document.createElement('option');
-        option.value = this.id;
+        option.id = this.id
+        option.value = this.transmission;
         option.innerText = this.transmission;
         transmission_select_element.appendChild(option)
 
         for (const opt of transmission_select_element.children){
-            if (opt.innerText === this.transmission && opt.value !== option.value){
+            if (opt.innerText === this.transmission && opt.id !== option.id){
                 transmission_select_element.removeChild(option);
             }
         }
@@ -87,12 +90,13 @@ class Vehicle {
 
     addFuelTypeToSelect(){
         const option = document.createElement('option');
-        option.value = this.id;
+        option.id = this.id
+        option.value = this.fuel_type;
         option.innerText = this.fuel_type;
         fuel_type_select_element.appendChild(option)
 
         for (const opt of fuel_type_select_element.children){
-            if (opt.innerText === this.fuel_type && opt.value !== option.value){
+            if (opt.innerText === this.fuel_type && opt.id !== option.id){
                 fuel_type_select_element.removeChild(option);
             }
         }

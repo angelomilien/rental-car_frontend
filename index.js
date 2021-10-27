@@ -13,13 +13,14 @@ const year_select_element = document.getElementById("vehicle-year");
 const rental_company_select_element = document.getElementById("vehicle-rental-company-id");
 
 
+
 vehicleCall.getVehicles()
 
 rentalCompanyCall.getRentalCompanies()
 
-// form.addEventListener('submit', handleSubmit)
-// function handleSubmit(e){
-//   e.preventDefault();
-//   vehicleCall.createVehicles()
-// //   debugger
-// }
+form.addEventListener('submit', handleSubmit)
+function handleSubmit(e){
+  e.preventDefault();
+  vehicleCall.createVehicles()
+//   debugger
+}
