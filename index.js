@@ -14,11 +14,12 @@ const rental_company_select_element = document.getElementById("vehicle-rental-co
 
 
 vehicleCall.getVehicles()
-rentalCompanyCall.getRentalCompanies()
-form.addEventListener('submit', handleSubmit)
 
-function handleSubmit(e){
-  e.preventDefault();
-  vehicleCall.createVehicles()
-//   debugger
-}
+rentalCompanyCall.getRentalCompanies()
+
+// form.addEventListener('submit', handleSubmit)
+// function handleSubmit(e){
+//   e.preventDefault();
+//   vehicleCall.createVehicles()
+// //   debugger
+// }

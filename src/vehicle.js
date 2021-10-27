@@ -44,10 +44,58 @@ class Vehicle {
     setToDom(){
         Vehicle.cont.appendChild(this.render())
     }
-    setOption(make){
-        // debugger
-        select = this.document.getElementById("make");
-   
+
+
+    addMakeToSelect(){
+        const option = document.createElement('option');
+        option.value = this.id;
+        option.innerText = this.make;
+        make_select_element.appendChild(option);
+
+        for (const opt of make_select_element.children){
+            if (opt.innerText === this.make && opt.value !== option.value){
+                make_select_element.removeChild(option);
+            }
+        }
+    }
+    
+    addModelToSelect(){
+        const option = document.createElement('option');
+        option.value = this.id;
+        option.innerText = this.model;
+        model_select_element.appendChild(option)
+
+        for (const opt of model_select_element.children){
+            if (opt.innerText === this.model && opt.value !== option.value){
+                model_select_element.removeChild(option);
+            }
+        }
+    }
+
+    addTransmissionToSelect(){
+        const option = document.createElement('option');
+        option.value = this.id;
+        option.innerText = this.transmission;
+        transmission_select_element.appendChild(option)
+
+        for (const opt of transmission_select_element.children){
+            if (opt.innerText === this.transmission && opt.value !== option.value){
+                transmission_select_element.removeChild(option);
+            }
+        }
+    }
+
+    addFuelTypeToSelect(){
+        const option = document.createElement('option');
+        option.value = this.id;
+        option.innerText = this.fuel_type;
+        fuel_type_select_element.appendChild(option)
+
+        for (const opt of fuel_type_select_element.children){
+            if (opt.innerText === this.fuel_type && opt.value !== option.value){
+                fuel_type_select_element.removeChild(option);
+            }
+        }
     }
 }
 

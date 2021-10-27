@@ -10,6 +10,10 @@ class VehicleApi {
             for(const vehicle of data){
                 let v = new Vehicle(vehicle)
                 v.setToDom()
+                v.addMakeToSelect()
+                v.addModelToSelect()
+                v.addTransmissionToSelect()
+                v.addFuelTypeToSelect()
             }
         })
         .catch()

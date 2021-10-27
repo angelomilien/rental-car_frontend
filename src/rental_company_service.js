@@ -9,7 +9,7 @@ class RentalCompanyApi {
         .then(data => {
             for(const rentalCompany of data){
                 let r = new RentalCompany(rentalCompany)
-                r.addToSelect()
+                r.addRentalNameToSelect()
             }
         })
         .catch()
