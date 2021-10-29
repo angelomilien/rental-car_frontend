@@ -1,7 +1,7 @@
 const port = `http://localhost:3000`;
 const vehicleCall = new VehicleApi(port);
 const rentalCompanyCall = new RentalCompanyApi(port);
-
+const selectTagColecction = document.getElementsByClassName("enume")
 const form = document.getElementById("vehicle-form");
 const make_select_element = document.getElementById("vehicle-make");
 const model_select_element = document.getElementById("vehicle-model");
@@ -17,10 +17,18 @@ const rental_company_select_element = document.getElementById("vehicle-rental-co
 vehicleCall.getVehicles()
 
 rentalCompanyCall.getRentalCompanies()
+// debugger
+// function addOptionToSelectp(){
+//   const option = document.createElement('option');
+//         option.id  = vehicle.id;
+//         option.value = vehicle.optionValue
+//         option.innerText = vehicle.optionValue;
+//         make_select_element.appendChild(option);
+// }
 
 form.addEventListener('submit', handleSubmit)
 function handleSubmit(e){
   e.preventDefault();
-  vehicleCall.createVehicles()
-//   debugger
+  // vehicleCall.createVehicles()
+  // debugger
 }
