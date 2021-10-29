@@ -23,14 +23,14 @@ class Vehicle {
     render(){
         this.element.innerHTML = `
         <div data-id="${this.id}">
-        <h2 class="company_name">${this.rental_company.name}</h2>
-        <h3 class="make">${this.make}</h3>
-        <p class="model"><strong>Model</strong> ${this.model}</p>
-        <p class="transmission"><strong>transmission:</strong> ${this.transmission}</p>
+        <h2 class="company_name">${ this.rental_company.name}</h2>
+        <h3 class="make">${ this.make}</h3>
+        <p class="model:"><strong>Model: </strong> ${this.model}</p>
+        <p class="transmission"><strong>transmission: </strong> ${this.transmission}</p>
         <p class="fuel_type"><strong>fuel type: </strong>${this.fuel_type}</p>
-        <p class="doors"><strong>Doors:</strong>${this.doors}</p>
-        <p class="mileage"><strong>Mileage:</strong>${this.mileage}</p>
-        <p class="year"><strong>Year:</strong> ${this.year}</p>
+        <p class="doors"><strong>Doors: </strong>${this.doors}</p>
+        <p class="mileage"><strong>Mileage: </strong>${this.mileage}</p>
+        <p class="year"><strong>Year: </strong> ${this.year}</p>
 
         <button class="edit" data-id=${this.id}>Edit Vehicle</button>
         <button class="delete" data-id=${this.id}>X</button>
@@ -47,7 +47,7 @@ class Vehicle {
 
     addOptionToSelect(){
         for(const select of selectTagColecction){
-            
+
             const option = document.createElement('option');
             option.id  = this.id;
             option.innerText = this[select.name];

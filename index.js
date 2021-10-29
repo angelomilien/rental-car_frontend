@@ -17,18 +17,11 @@ const rental_company_select_element = document.getElementById("vehicle-rental-co
 vehicleCall.getVehicles()
 
 rentalCompanyCall.getRentalCompanies()
-// debugger
-// function addOptionToSelectp(){
-//   const option = document.createElement('option');
-//         option.id  = vehicle.id;
-//         option.value = vehicle.optionValue
-//         option.innerText = vehicle.optionValue;
-//         make_select_element.appendChild(option);
-// }
+
 
 form.addEventListener('submit', handleSubmit)
 function handleSubmit(e){
   e.preventDefault();
-  // vehicleCall.createVehicles()
+  vehicleCall.createVehicles()
   // debugger
 }
