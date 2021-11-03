@@ -16,29 +16,65 @@ class Vehicle {
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;
         this.element.id = `vehicle-${id}`;
-        // this.element.addEventListener('click', this.handleClick);
+        this.element.addEventListener('click', this.handleClick);
         Vehicle.all.push(this)
     };
 
     render(){
         this.element.innerHTML = `
-        <div data-id="${this.id}">
-        <h2 class="company_name">${ this.rental_company.name}</h2>
-        <h3 class="make">${ this.make}</h3>
-        <p class="model:"><strong>Model: </strong> ${this.model}</p>
-        <p class="transmission"><strong>transmission: </strong> ${this.transmission}</p>
-        <p class="fuel_type"><strong>fuel type: </strong>${this.fuel_type}</p>
-        <p class="doors"><strong>Doors: </strong>${this.doors}</p>
-        <p class="mileage"><strong>Mileage: </strong>${this.mileage}</p>
-        <p class="year"><strong>Year: </strong> ${this.year}</p>
-
-        <button class="edit" data-id=${this.id}>Edit Vehicle</button>
-        <button class="delete" data-id=${this.id}>X</button>
-        </div>
-        `
+        <div>
+           <h2 class="company_name">${ this.rental_company.name}</h2>
+           <h3 class="make">${ this.make}</h3>
+           <p class="model:"><strong>Model: </strong> ${this.model}</p>
+           <p class="transmission"><strong>transmission: </strong> ${this.transmission}</p>
+           <p class="fuel_type"><strong>fuel type: </strong>${this.fuel_type}</p>
+           <div class="car-div"data-id="${this.id}">
+                <div><strong>Doors: </strong> <p class="doors" style="display: inline-flex">${this.doors}</p> </div>
+                <div><strong>Mileage: </strong><p class="mileage" style="display: inline-flex">${this.mileage}</p></div>
+                <div><strong>Year: </strong><p class="year" style="display: inline-flex"> ${this.year}</p></div>
+           </div>
+           <button class="edit" data-id=${this.id}>Edit Vehicle</button>
+           <button class="delete" data-id=${this.id}>X</button>
+        </div>`
         this.element.style.display = "inline-flex";
-        this.element.style.margin = "10px 50px 20px 10px";
+        this.element.style.margin = "10px 80px 20px 10px";
         return this.element
+    }
+
+    handleClick = (e) => {
+        // debugger
+        if(e.target.innerText === "Edit Vehicle"){
+            // console.log(e.target)
+            e.target.innerText = "Save Vehicle"
+            this.createEditForm()
+        }else if(e.target.innerText === "X"){
+            // console.log(e.target)
+            vehicleCall.deleteVehicle(e)
+        }else if(e.target.innerText === "Save Vehicle"){
+            // console.log("save works")
+            e.target.innerText = "Edit Vehicle"
+            this.updateVehicleInfo()
+        }
+    }
+
+
+    createEditForm(){
+        const div = this.element.querySelector('div').children[5];
+        for (const element of div.children){
+            const p = element.children[1]
+            const inputValue = p.innerText;
+            const  name = p.classList[0];
+            p.outerHTML = `<input type="text" class="edit-${name}" value="${inputValue}" style="display: inline-flex"/><br><br>`
+        }
+    }
+
+
+    updateVehicleInfo(){
+        const div = this.element.children[0].children[5]
+        this.doors = div.querySelector(".edit-doors").value;
+        this.mileage = div.querySelector(".edit-mileage").value;
+        this.year = div.querySelector(".edit-year").value;
+        vehicleCall.updateVehicle(this)
     }
 
     setToDom(){

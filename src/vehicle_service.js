@@ -29,11 +29,10 @@ class VehicleApi {
                 mileage: mileage_select_element.value,
                 year: year_select_element.value,
                 rental_company_id: rental_company_select_element.value
-                
+   
             }
     
         };
-// debugger
         const configObject = {
             method: 'POST',
             headers: {
@@ -50,6 +49,37 @@ class VehicleApi {
             v.setToDom()
             form.reset()
         })
+    }
+    
+
+    updateVehicle(vehicle){
+        const {doors, mileage, year, id} = vehicle
+
+        const vehicleInfo = {
+            doors, 
+            mileage,
+            year
+        }
+
+        const configObject = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(vehicleInfo)
+        }
+        fetch(`${this.port}/vehicles/${id}`, configObject)
+        .then( () => {vehicle.render()})
+    }
+
+
+    deleteVehicle(e){
+        const id = e.target.dataset.id
+        e.target.parentElement.parentElement.remove()
+        fetch(`${this.port}/vehicles/${id}`, {method: 'DELETE'})
+        .then(response => response.json())
+        .then(json => alert(json.message))
     }
 
 
